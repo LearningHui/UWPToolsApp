@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="MainProject.Test.HttpTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MainProject.Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Click="GetHttpRequest_Sync_Click">Get sync task</Button>
+            <Button Margin="5" Click="GetHttpRequest_Async_Click">Get async task</Button>
+            <Button Margin="5" Click="PostHttpRequest_Sync_Click">post sync task</Button>
+            <Button Margin="5" Click="PostHttpRequest_Async_Click">post async task</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button Margin="5" Click="GetHttpCallback_Click">Get callback</Button>
+            <Button Margin="5" Click="PostHttpCallback_Click">post callback</Button>
+        </StackPanel>
+        <Image x:Name="img" Width="200" Height="200" HorizontalAlignment="Right"></Image>
+        <ScrollViewer Grid.Row="2">
+            <TextBlock x:Name="result_tbk" TextWrapping="Wrap"></TextBlock>
+        </ScrollViewer>
+    </Grid>
+</Page>

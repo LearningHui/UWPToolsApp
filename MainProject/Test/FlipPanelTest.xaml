@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="MainProject.Test.FlipPanelTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MainProject.Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customControl="using:CustomControls"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <customControl:FlipPanel x:Name="panel" BorderBrush="DarkOrange" BorderThickness="3" IsFlipped="True"
+         CornerRadius="4" Margin="10">
+            <customControl:FlipPanel.FrontContent>
+                <StackPanel Margin="6">
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkOrange">This is the front side of the FlipPanel.</TextBlock>
+                    <Button Margin="3" Padding="3" Content="Button One"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Two"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Three"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Four"></Button>
+                </StackPanel>
+            </customControl:FlipPanel.FrontContent>
+            <customControl:FlipPanel.BackContent>
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkMagenta">This is the back side of the FlipPanel.</TextBlock>
+                    <Button Grid.Row="2" Margin="3" Padding="10" Content="Flip Back to Front" HorizontalAlignment="Center" VerticalAlignment="Center" Click="cmdFlip_Click"></Button>
+                </Grid>
+            </customControl:FlipPanel.BackContent>
+        </customControl:FlipPanel>
+    </Grid>
+</Page>
